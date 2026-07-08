@@ -755,8 +755,9 @@
             <p class="section-sub">Got an ambitious product in mind, an XR idea you want to explore, or just want to talk shop? I'd genuinely love to hear from you.</p>
             <div class="contact-links" id="contactLinks"></div>
             <div class="contact-actions">
-              <button class="btn btn-primary" onclick="downloadVCard()">⬇ Download vCard</button>
+              <a class="btn btn-primary" id="calendlyBtn" target="_blank" rel="noopener">📅 Book a 30-min Call</a>
               <a class="btn btn-wa" id="whatsappBtn2" target="_blank" rel="noopener">💬 Message on WhatsApp</a>
+              <button class="btn" onclick="downloadVCard()">⬇ Download vCard</button>
             </div>
           </div>
           <div class="qr-box">
@@ -805,6 +806,7 @@
     phoneIntl: "923218894274",             // digits only, country code, no +  (for WhatsApp & vCard)
     linkedin: "https://www.linkedin.com/in/ahmadiftikhar17",
     github: "https://github.com/AhmadIftikhar",
+    calendly: "https://calendly.com/elytra-studio-ahmad-iftikhar/30min",
 
     // Roles cycled in the hero typing effect
     roles: [
@@ -975,6 +977,7 @@
   const waLink = "https://wa.me/" + CONFIG.phoneIntl + "?text=" + encodeURIComponent("Hi Ahmad, I found your digital card and would love to connect!");
   document.getElementById("whatsappBtn").href = waLink;
   document.getElementById("whatsappBtn2").href = waLink;
+  document.getElementById("calendlyBtn").href = CONFIG.calendly;
   document.getElementById("fabWa").href = waLink;
   document.getElementById("year").textContent = "2026";
 
@@ -1108,7 +1111,8 @@
     { ic: "in", t: "LinkedIn", v: CONFIG.linkedin.replace(/^https?:\/\/(www\.)?/, ""), href: CONFIG.linkedin },
     { ic: "⌥", t: "GitHub", v: CONFIG.github.replace(/^https?:\/\/(www\.)?/, ""), href: CONFIG.github },
     { ic: "🌐", t: "Website", v: CONFIG.website.replace(/^https?:\/\//, ""), href: CONFIG.website },
-    { ic: "💬", t: "WhatsApp", v: CONFIG.phoneDisplay, href: waLink }
+    { ic: "💬", t: "WhatsApp", v: CONFIG.phoneDisplay, href: waLink },
+    { ic: "📅", t: "Book a Call", v: "Schedule a 30-min chat", href: CONFIG.calendly }
   ];
   document.getElementById("contactLinks").innerHTML = contactData.map(c => `
     <a class="clink" href="${c.href}" target="_blank" rel="noopener">
