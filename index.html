@@ -1,0 +1,1033 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================ SEO ============================ -->
+  <title>Ahmad Iftikhar — Technology Leader, CTO & XR Innovator</title>
+  <meta name="description" content="Ahmad Iftikhar is a technology leader, CTO, and XR innovator building immersive AR, VR, and game development experiences and scalable software products." />
+  <meta name="author" content="Ahmad Iftikhar" />
+  <meta name="keywords" content="Ahmad Iftikhar, CTO, XR Expert, AR Developer, VR Developer, Unity Developer, Unreal Developer, Game Development, Technical Leadership, WebXR, Immersive Experiences" />
+  <meta name="theme-color" content="#06070c" />
+  <link rel="canonical" href="https://ahmadiftikhar.github.io/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Ahmad Iftikhar — Technology Leader, CTO & XR Innovator" />
+  <meta property="og:description" content="Building immersive digital experiences, scalable software products, and innovative AR, VR, XR, and game development solutions." />
+  <meta property="og:url" content="https://ahmadiftikhar.github.io/" />
+  <meta property="og:image" content="https://ahmadiftikhar.github.io/og-image.png" />
+  <meta property="og:site_name" content="Ahmad Iftikhar" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ahmad Iftikhar — Technology Leader, CTO & XR Innovator" />
+  <meta name="twitter:description" content="Building immersive digital experiences, scalable software products, and innovative AR, VR, XR, and game development solutions." />
+  <meta name="twitter:image" content="https://ahmadiftikhar.github.io/og-image.png" />
+
+  <!-- Structured data (Person) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ahmad Iftikhar",
+    "jobTitle": "Chief Technology Officer",
+    "description": "Technology leader, CTO, and XR innovator specializing in AR, VR, XR, and game development.",
+    "url": "https://ahmadiftikhar.github.io/",
+    "sameAs": [
+      "https://www.linkedin.com/in/ahmadiftikhar",
+      "https://github.com/ahmadiftikhar"
+    ],
+    "knowsAbout": ["Extended Reality", "Augmented Reality", "Virtual Reality", "Unity", "Unreal Engine", "Game Development", "Technical Leadership", "Product Strategy"],
+    "worksFor": { "@type": "Organization", "name": "Elytra Studios" }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Sora,sans-serif' font-weight='700'>%E2%97%88</text></svg>" />
+
+  <style>
+  /* ============================================================
+     THEME TOKENS
+  ============================================================ */
+  :root {
+    --bg: #06070c;
+    --bg-soft: #0b0d16;
+    --surface: rgba(255, 255, 255, 0.04);
+    --surface-2: rgba(255, 255, 255, 0.06);
+    --border: rgba(255, 255, 255, 0.09);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --text: #f4f6fb;
+    --text-soft: #aab1c4;
+    --text-dim: #6b7180;
+    --violet: #7c5cff;
+    --cyan: #22d3ee;
+    --emerald: #34e0a1;
+    --pink: #ff5c8a;
+    --grad: linear-gradient(120deg, #7c5cff 0%, #22d3ee 55%, #34e0a1 100%);
+    --grad-soft: linear-gradient(120deg, rgba(124,92,255,.18), rgba(34,211,238,.18));
+    --shadow: 0 30px 80px -30px rgba(0, 0, 0, 0.7);
+    --glow: 0 0 60px -10px rgba(124, 92, 255, 0.45);
+    --radius: 22px;
+    --maxw: 1180px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  html[data-theme="light"] {
+    --bg: #f4f5fb;
+    --bg-soft: #ffffff;
+    --surface: rgba(255, 255, 255, 0.7);
+    --surface-2: rgba(255, 255, 255, 0.9);
+    --border: rgba(15, 20, 40, 0.09);
+    --border-strong: rgba(15, 20, 40, 0.16);
+    --text: #0d1020;
+    --text-soft: #454c60;
+    --text-dim: #7a8196;
+    --shadow: 0 30px 70px -35px rgba(40, 50, 90, 0.35);
+    --grad-soft: linear-gradient(120deg, rgba(124,92,255,.12), rgba(34,211,238,.12));
+  }
+
+  /* ============================================================
+     RESET / BASE
+  ============================================================ */
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    transition: background 0.5s var(--ease), color 0.5s var(--ease);
+  }
+  h1, h2, h3, h4, .display { font-family: "Sora", sans-serif; letter-spacing: -0.02em; line-height: 1.08; }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  ::selection { background: rgba(124, 92, 255, 0.35); color: #fff; }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 11px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: linear-gradient(var(--violet), var(--cyan)); border-radius: 20px; border: 3px solid var(--bg); }
+
+  /* ============================================================
+     BACKGROUND LAYERS
+  ============================================================ */
+  #particles {
+    position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  }
+  .bg-mesh {
+    position: fixed; inset: -20%; z-index: -1; pointer-events: none;
+    background:
+      radial-gradient(40% 40% at 15% 20%, rgba(124, 92, 255, 0.22), transparent 70%),
+      radial-gradient(40% 40% at 85% 15%, rgba(34, 211, 238, 0.18), transparent 70%),
+      radial-gradient(45% 45% at 75% 85%, rgba(52, 224, 161, 0.14), transparent 70%),
+      radial-gradient(40% 40% at 20% 90%, rgba(255, 92, 138, 0.12), transparent 70%);
+    filter: blur(20px);
+    animation: meshFloat 22s ease-in-out infinite alternate;
+  }
+  html[data-theme="light"] .bg-mesh { opacity: 0.55; }
+  @keyframes meshFloat {
+    0% { transform: translate3d(0,0,0) scale(1); }
+    100% { transform: translate3d(0,-3%,0) scale(1.08); }
+  }
+  .grain {
+    position: fixed; inset: 0; z-index: 1; pointer-events: none; opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* ============================================================
+     LAYOUT
+  ============================================================ */
+  main { position: relative; z-index: 2; }
+  .wrap { width: min(var(--maxw), 92vw); margin-inline: auto; }
+  section { padding: clamp(80px, 12vh, 160px) 0; position: relative; }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.74rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--text-soft); padding: 7px 14px; border-radius: 100px;
+    border: 1px solid var(--border); background: var(--surface);
+  }
+  .eyebrow::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--grad); box-shadow: var(--glow); }
+  .section-title { font-size: clamp(2rem, 4.6vw, 3.4rem); font-weight: 700; margin: 22px 0 14px; }
+  .section-sub { color: var(--text-soft); max-width: 620px; font-size: 1.05rem; }
+  .grad-text { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+  /* ============================================================
+     NAV
+  ============================================================ */
+  nav {
+    position: fixed; top: 18px; left: 50%; transform: translateX(-50%);
+    z-index: 100; width: min(var(--maxw), 94vw);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 14px 12px 22px; border-radius: 100px;
+    background: var(--surface); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+    border: 1px solid var(--border); box-shadow: var(--shadow);
+    transition: transform 0.5s var(--ease), background 0.4s, opacity 0.4s;
+  }
+  nav.hidden { transform: translateX(-50%) translateY(-140%); }
+  .brand { font-family: "Sora"; font-weight: 700; font-size: 1.05rem; display: flex; align-items: center; gap: 10px; }
+  .brand .dot { width: 26px; height: 26px; border-radius: 8px; background: var(--grad); box-shadow: var(--glow); display: grid; place-items: center; font-size: 0.8rem; color: #fff; }
+  .nav-links { display: flex; gap: 4px; align-items: center; }
+  .nav-links a {
+    font-size: 0.86rem; color: var(--text-soft); padding: 9px 15px; border-radius: 100px;
+    font-weight: 500; transition: color 0.25s, background 0.25s;
+  }
+  .nav-links a:hover { color: var(--text); background: var(--surface-2); }
+  .nav-right { display: flex; gap: 8px; align-items: center; }
+  .icon-btn {
+    width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--surface-2); border: 1px solid var(--border); color: var(--text);
+    cursor: pointer; transition: transform 0.25s var(--ease), border-color 0.25s; font-size: 1.05rem;
+  }
+  .icon-btn:hover { transform: translateY(-2px) rotate(8deg); border-color: var(--border-strong); }
+  .nav-cta {
+    padding: 10px 20px; border-radius: 100px; font-weight: 600; font-size: 0.86rem;
+    background: var(--grad); color: #05060a; border: none; cursor: pointer;
+    transition: transform 0.25s var(--ease), box-shadow 0.3s;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow); }
+  .burger { display: none; }
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .burger { display: grid; }
+  }
+
+  /* Mobile menu */
+  .mobile-menu {
+    position: fixed; inset: 0; z-index: 99; background: rgba(6,7,12,0.85);
+    backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px);
+    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s var(--ease);
+  }
+  html[data-theme="light"] .mobile-menu { background: rgba(244,245,251,0.9); }
+  .mobile-menu.open { opacity: 1; pointer-events: auto; }
+  .mobile-menu a { font-family: "Sora"; font-size: 1.8rem; font-weight: 600; color: var(--text); padding: 10px 20px; }
+  .mobile-menu a:hover { color: var(--violet); }
+
+  /* ============================================================
+     BUTTONS
+  ============================================================ */
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+    padding: 14px 24px; border-radius: 100px; font-weight: 600; font-size: 0.94rem;
+    border: 1px solid var(--border-strong); background: var(--surface);
+    color: var(--text); transition: transform 0.28s var(--ease), box-shadow 0.3s, border-color 0.3s, background 0.3s;
+    backdrop-filter: blur(10px); white-space: nowrap;
+  }
+  .btn svg, .btn .ico { width: 18px; height: 18px; }
+  .btn:hover { transform: translateY(-3px); border-color: var(--border-strong); box-shadow: var(--shadow); }
+  .btn-primary { background: var(--grad); color: #05060a; border: none; font-weight: 700; }
+  .btn-primary:hover { box-shadow: var(--glow); }
+  .btn-wa { background: linear-gradient(135deg,#25d366,#128c7e); color:#fff; border:none; }
+
+  /* ============================================================
+     HERO
+  ============================================================ */
+  #hero { min-height: 100vh; display: grid; align-items: center; padding-top: 120px; }
+  .hero-grid { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 60px; align-items: center; }
+  @media (max-width: 940px) { .hero-grid { grid-template-columns: 1fr; text-align: center; } }
+
+  .hero-badge { margin-bottom: 26px; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--emerald); box-shadow: 0 0 12px var(--emerald); animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+  .hero h1 { font-size: clamp(2.8rem, 7vw, 5.2rem); font-weight: 800; margin-bottom: 10px; }
+  .hero .typed-wrap {
+    font-family: "Sora"; font-weight: 600; font-size: clamp(1.1rem, 2.6vw, 1.7rem);
+    color: var(--text-soft); min-height: 1.5em; margin-bottom: 22px;
+  }
+  .typed { color: var(--text); }
+  .caret { display: inline-block; width: 3px; height: 1.05em; background: var(--grad); margin-left: 4px; vertical-align: text-bottom; animation: blink 1s steps(1) infinite; border-radius: 2px; }
+  @keyframes blink { 50% { opacity: 0; } }
+  .hero p.lead { color: var(--text-soft); font-size: 1.12rem; max-width: 540px; margin-bottom: 34px; }
+  @media (max-width: 940px) { .hero p.lead { margin-inline: auto; } }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 30px; }
+  @media (max-width: 940px) { .hero-actions { justify-content: center; } }
+  .hero-socials { display: flex; gap: 14px; align-items: center; color: var(--text-dim); font-size: 0.86rem; }
+  @media (max-width: 940px) { .hero-socials { justify-content: center; } }
+
+  /* Avatar */
+  .avatar-stage { position: relative; display: grid; place-items: center; }
+  .avatar-ring {
+    position: relative; width: min(380px, 78vw); aspect-ratio: 1; border-radius: 50%;
+    display: grid; place-items: center;
+  }
+  .avatar-ring::before {
+    content: ""; position: absolute; inset: -3px; border-radius: 50%;
+    background: conic-gradient(from 0deg, var(--violet), var(--cyan), var(--emerald), var(--pink), var(--violet));
+    animation: spin 8s linear infinite; filter: blur(2px);
+  }
+  .avatar-ring::after {
+    content: ""; position: absolute; inset: 6px; border-radius: 50%; background: var(--bg);
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .avatar-inner {
+    position: relative; z-index: 2; width: calc(100% - 26px); aspect-ratio: 1; border-radius: 50%;
+    overflow: hidden; border: 1px solid var(--border-strong);
+    background: linear-gradient(160deg, #12131f, #090a12);
+    display: grid; place-items: center;
+  }
+  .avatar-inner img { width: 100%; height: 100%; object-fit: cover; }
+  .avatar-mono { font-family: "Sora"; font-weight: 800; font-size: clamp(3.5rem, 9vw, 6rem); background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .float-chip {
+    position: absolute; z-index: 3; padding: 10px 16px; border-radius: 100px;
+    background: var(--surface); backdrop-filter: blur(14px); border: 1px solid var(--border);
+    box-shadow: var(--shadow); font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 8px;
+    animation: floaty 5s ease-in-out infinite;
+  }
+  .float-chip .fi { font-size: 1rem; }
+  .chip-1 { top: 8%; left: -6%; }
+  .chip-2 { bottom: 14%; right: -8%; animation-delay: 1.5s; }
+  .chip-3 { bottom: 2%; left: 6%; animation-delay: 3s; }
+  @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+  @media (max-width: 940px) { .float-chip { display: none; } }
+
+  /* Scroll indicator */
+  .scroll-ind {
+    position: absolute; bottom: 26px; left: 50%; transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 8px; color: var(--text-dim); font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase;
+  }
+  .mouse { width: 24px; height: 38px; border: 2px solid var(--border-strong); border-radius: 14px; display: flex; justify-content: center; padding-top: 7px; }
+  .mouse span { width: 4px; height: 8px; border-radius: 4px; background: var(--grad); animation: scrolldot 1.6s infinite; }
+  @keyframes scrolldot { 0% { opacity: 0; transform: translateY(-4px); } 40% { opacity: 1; } 80%,100% { opacity: 0; transform: translateY(10px); } }
+
+  /* ============================================================
+     GLASS CARD
+  ============================================================ */
+  .glass {
+    background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    box-shadow: var(--shadow); position: relative; overflow: hidden;
+  }
+  .glass::before {
+    content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+    background: linear-gradient(140deg, rgba(255,255,255,0.18), transparent 40%);
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor; mask-composite: exclude; pointer-events: none; opacity: 0.6;
+  }
+
+  /* ============================================================
+     ABOUT + STATS
+  ============================================================ */
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+  @media (max-width: 880px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text p { color: var(--text-soft); margin-bottom: 18px; font-size: 1.05rem; }
+  .about-text .lead-line { font-size: 1.25rem; color: var(--text); font-weight: 500; font-family: "Sora"; }
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .stat { padding: 28px 24px; text-align: left; }
+  .stat .num { font-family: "Sora"; font-weight: 800; font-size: clamp(2.2rem, 5vw, 3rem); background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .stat .label { color: var(--text-soft); font-size: 0.9rem; margin-top: 4px; }
+
+  /* ============================================================
+     EXCITES CARDS
+  ============================================================ */
+  .card-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 18px; }
+  .xcard { padding: 28px 26px; transition: transform 0.4s var(--ease), border-color 0.4s; cursor: default; }
+  .xcard:hover { transform: translateY(-6px); border-color: var(--border-strong); }
+  .xcard .ic {
+    width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.5rem;
+    background: var(--grad-soft); border: 1px solid var(--border); margin-bottom: 18px;
+    transition: transform 0.4s var(--ease);
+  }
+  .xcard:hover .ic { transform: scale(1.08) rotate(-6deg); }
+  .xcard h3 { font-size: 1.15rem; margin-bottom: 8px; font-weight: 600; }
+  .xcard p { color: var(--text-soft); font-size: 0.92rem; }
+
+  /* ============================================================
+     EXPERTISE — skill rings + constellation
+  ============================================================ */
+  .skill-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px; }
+  .skill { padding: 24px; display: flex; gap: 18px; align-items: center; transition: transform 0.35s var(--ease), border-color 0.35s; }
+  .skill:hover { transform: translateY(-4px); border-color: var(--border-strong); }
+  .ring { position: relative; width: 64px; height: 64px; flex-shrink: 0; }
+  .ring svg { transform: rotate(-90deg); }
+  .ring .pct { position: absolute; inset: 0; display: grid; place-items: center; font-family: "Sora"; font-weight: 700; font-size: 0.82rem; }
+  .skill .s-name { font-weight: 600; font-size: 0.98rem; }
+  .skill .s-cat { color: var(--text-dim); font-size: 0.78rem; margin-top: 2px; }
+
+  .tech-cloud { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 40px; justify-content: center; }
+  .tech-tag {
+    padding: 9px 18px; border-radius: 100px; font-size: 0.86rem; font-weight: 500;
+    background: var(--surface); border: 1px solid var(--border); color: var(--text-soft);
+    transition: all 0.3s var(--ease); cursor: default;
+  }
+  .tech-tag:hover { color: var(--text); border-color: var(--violet); box-shadow: 0 0 24px -8px var(--violet); transform: translateY(-2px); }
+
+  /* ============================================================
+     VENTURES
+  ============================================================ */
+  .venture { padding: 40px; display: grid; grid-template-columns: auto 1fr; gap: 30px; transition: transform 0.4s var(--ease), border-color 0.4s; }
+  @media (max-width: 700px) { .venture { grid-template-columns: 1fr; gap: 20px; } }
+  .venture:hover { transform: translateY(-5px); border-color: var(--border-strong); }
+  .venture-logo {
+    width: 78px; height: 78px; border-radius: 20px; display: grid; place-items: center; font-size: 2rem;
+    background: var(--grad); color: #05060a; font-family: "Sora"; font-weight: 800; box-shadow: var(--glow);
+  }
+  .venture h3 { font-size: 1.5rem; margin-bottom: 4px; }
+  .venture .role { color: var(--violet); font-weight: 600; font-size: 0.9rem; margin-bottom: 14px; }
+  .venture p { color: var(--text-soft); margin-bottom: 16px; }
+  .venture .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+  .venture .tags span { font-size: 0.78rem; padding: 5px 12px; border-radius: 100px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-soft); }
+  .ventures-list { display: grid; gap: 18px; }
+
+  /* ============================================================
+     PROJECTS — horizontal scroll
+  ============================================================ */
+  .proj-scroll { display: flex; gap: 20px; overflow-x: auto; padding: 6px 4px 26px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
+  .proj-scroll::-webkit-scrollbar { height: 8px; }
+  .project {
+    flex: 0 0 min(360px, 82vw); scroll-snap-align: start; padding: 0; overflow: hidden;
+    display: flex; flex-direction: column; transition: transform 0.4s var(--ease), border-color 0.4s;
+  }
+  .project:hover { transform: translateY(-6px); border-color: var(--border-strong); }
+  .project .cover { aspect-ratio: 16/10; position: relative; overflow: hidden; display: grid; place-items: center; }
+  .project .cover .cover-grad { position: absolute; inset: 0; opacity: 0.9; }
+  .project .cover .cov-emoji { position: relative; z-index: 2; font-size: 3.4rem; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.4)); transition: transform 0.5s var(--ease); }
+  .project:hover .cover .cov-emoji { transform: scale(1.15) rotate(-5deg); }
+  .project .body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+  .project h3 { font-size: 1.2rem; margin-bottom: 8px; }
+  .project p { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 16px; flex: 1; }
+  .project .ptags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .project .ptags span { font-size: 0.72rem; padding: 4px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-soft); }
+  .project .outcome { font-size: 0.82rem; color: var(--emerald); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
+  .project .plink { font-size: 0.86rem; font-weight: 600; color: var(--cyan); display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s; }
+  .project .plink:hover { gap: 12px; }
+
+  /* ============================================================
+     PHILOSOPHY
+  ============================================================ */
+  .philo { text-align: center; }
+  .philo .quote { font-family: "Sora"; font-weight: 600; font-size: clamp(1.6rem, 4.5vw, 2.8rem); line-height: 1.3; max-width: 900px; margin: 24px auto 40px; }
+  .values { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 18px; text-align: left; }
+  .value { padding: 26px; }
+  .value .vic { font-size: 1.6rem; margin-bottom: 12px; }
+  .value h4 { font-size: 1.05rem; margin-bottom: 6px; }
+  .value p { color: var(--text-soft); font-size: 0.9rem; }
+
+  /* ============================================================
+     CONTACT
+  ============================================================ */
+  .contact-card { padding: clamp(30px, 5vw, 60px); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+  @media (max-width: 840px) { .contact-card { grid-template-columns: 1fr; text-align: center; } }
+  .contact-links { display: grid; gap: 12px; margin: 28px 0; }
+  .clink { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 16px; background: var(--surface-2); border: 1px solid var(--border); transition: transform 0.3s var(--ease), border-color 0.3s; text-align: left; }
+  .clink:hover { transform: translateX(6px); border-color: var(--border-strong); }
+  @media (max-width: 840px) { .clink:hover { transform: translateY(-3px); } }
+  .clink .cl-ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; font-size: 1.2rem; background: var(--grad-soft); border: 1px solid var(--border); flex-shrink: 0; }
+  .clink .cl-t { font-size: 0.76rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+  .clink .cl-v { font-weight: 600; font-size: 0.96rem; }
+  .qr-box { text-align: center; }
+  .qr-frame { width: 210px; height: 210px; margin: 0 auto 16px; padding: 14px; border-radius: 20px; background: #fff; display: grid; place-items: center; box-shadow: var(--shadow); }
+  .qr-frame img { border-radius: 8px; width: 100%; height: 100%; }
+  .qr-box p { color: var(--text-soft); font-size: 0.86rem; }
+  .contact-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 20px; }
+  @media (max-width: 840px) { .contact-actions { justify-content: center; } }
+
+  /* ============================================================
+     FOOTER
+  ============================================================ */
+  footer { padding: 50px 0 40px; border-top: 1px solid var(--border); text-align: center; position: relative; z-index: 2; }
+  footer .fbrand { font-family: "Sora"; font-weight: 700; font-size: 1.3rem; margin-bottom: 10px; }
+  footer p { color: var(--text-dim); font-size: 0.86rem; }
+  .footer-socials { display: flex; gap: 14px; justify-content: center; margin: 18px 0; }
+
+  /* ============================================================
+     FLOATING ACTIONS
+  ============================================================ */
+  .fab-stack { position: fixed; right: 22px; bottom: 22px; z-index: 90; display: flex; flex-direction: column; gap: 12px; }
+  .fab {
+    width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; font-size: 1.3rem;
+    border: none; cursor: pointer; box-shadow: var(--shadow); transition: transform 0.3s var(--ease);
+    color: #fff;
+  }
+  .fab:hover { transform: scale(1.12) translateY(-2px); }
+  .fab-wa { background: linear-gradient(135deg,#25d366,#128c7e); }
+  .fab-top { background: var(--grad); color: #05060a; opacity: 0; pointer-events: none; transition: opacity 0.4s, transform 0.3s; }
+  .fab-top.show { opacity: 1; pointer-events: auto; }
+
+  /* ============================================================
+     PRELOADER
+  ============================================================ */
+  #preloader {
+    position: fixed; inset: 0; z-index: 9999; background: var(--bg);
+    display: grid; place-items: center; transition: opacity 0.6s var(--ease), visibility 0.6s;
+  }
+  #preloader.done { opacity: 0; visibility: hidden; }
+  .loader-mark { text-align: center; }
+  .loader-diamond {
+    width: 60px; height: 60px; margin: 0 auto 22px; border-radius: 16px; background: var(--grad);
+    box-shadow: var(--glow); animation: loaderSpin 1.4s var(--ease) infinite;
+  }
+  @keyframes loaderSpin { 0% { transform: rotate(0) scale(1); border-radius: 16px; } 50% { transform: rotate(180deg) scale(0.7); border-radius: 50%; } 100% { transform: rotate(360deg) scale(1); border-radius: 16px; } }
+  .loader-mark .lname { font-family: "Sora"; font-weight: 700; letter-spacing: 0.3em; color: var(--text-soft); font-size: 0.9rem; text-transform: uppercase; }
+  .loader-bar { width: 160px; height: 3px; border-radius: 4px; background: var(--surface-2); margin: 16px auto 0; overflow: hidden; }
+  .loader-bar span { display: block; height: 100%; width: 40%; background: var(--grad); border-radius: 4px; animation: loaderBar 1.2s var(--ease) infinite; }
+  @keyframes loaderBar { 0% { transform: translateX(-100%); } 100% { transform: translateX(320%); } }
+
+  /* ============================================================
+     REVEAL ANIMATIONS
+  ============================================================ */
+  .reveal { opacity: 0; transform: translateY(34px); transition: opacity 0.8s var(--ease), transform 0.8s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.08s; }
+  .reveal.d2 { transition-delay: 0.16s; }
+  .reveal.d3 { transition-delay: 0.24s; }
+  .reveal.d4 { transition-delay: 0.32s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+    .reveal { opacity: 1; transform: none; }
+  }
+  </style>
+</head>
+<body>
+
+  <!-- ================= PRELOADER ================= -->
+  <div id="preloader">
+    <div class="loader-mark">
+      <div class="loader-diamond"></div>
+      <div class="lname">AHMAD IFTIKHAR</div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ================= BACKGROUND ================= -->
+  <div class="bg-mesh"></div>
+  <canvas id="particles"></canvas>
+  <div class="grain"></div>
+
+  <!-- ================= NAV ================= -->
+  <nav id="nav">
+    <a href="#hero" class="brand"><span class="dot">◈</span> Ahmad Iftikhar</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#excites">Passions</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#ventures">Ventures</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="nav-right">
+      <button class="icon-btn" id="themeBtn" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+      <button class="nav-cta" onclick="downloadVCard()">Save Contact</button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about">About</a>
+    <a href="#excites">Passions</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#ventures">Ventures</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </div>
+
+  <main>
+    <!-- ================= HERO ================= -->
+    <section id="hero">
+      <div class="wrap hero-grid">
+        <div class="hero">
+          <div class="eyebrow hero-badge"><span class="status-dot"></span> Available for collaborations & advisory</div>
+          <h1>Ahmad <span class="grad-text">Iftikhar</span></h1>
+          <div class="typed-wrap">I'm a <span class="typed" id="typed"></span><span class="caret"></span></div>
+          <p class="lead">I build immersive digital experiences, scalable software products, and innovative AR, VR, XR, and game development solutions.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" id="linkedinBtn" target="_blank" rel="noopener">
+              <span class="ico">in</span> LinkedIn
+            </a>
+            <a class="btn" id="emailBtn">✉ Email</a>
+            <a class="btn btn-wa" id="whatsappBtn" target="_blank" rel="noopener">💬 WhatsApp</a>
+            <button class="btn" onclick="downloadVCard()">⬇ vCard</button>
+          </div>
+          <div class="hero-socials">
+            <span>◈ Elytra Studios</span> <span>•</span> <span>XR & Game Development</span>
+          </div>
+        </div>
+
+        <div class="avatar-stage">
+          <div class="avatar-ring">
+            <div class="avatar-inner">
+              <!-- Replace with: <img src="me.jpg" alt="Ahmad Iftikhar" /> -->
+              <span class="avatar-mono">AI</span>
+            </div>
+          </div>
+          <div class="float-chip chip-1"><span class="fi">🎮</span> Game Dev</div>
+          <div class="float-chip chip-2"><span class="fi">🥽</span> XR / AR / VR</div>
+          <div class="float-chip chip-3"><span class="fi">⚡</span> CTO</div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-ind" aria-label="Scroll down">
+        <div class="mouse"><span></span></div>
+        Scroll
+      </a>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about">
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <div class="eyebrow">About Me</div>
+            <h2 class="section-title">Turning bold ideas into <span class="grad-text">immersive reality</span></h2>
+            <p class="lead-line">I'm a technology leader who lives at the intersection of engineering craft, creative vision, and product strategy.</p>
+            <p>Over more than a decade, I've led multidisciplinary teams to ship products across gaming, XR, and enterprise software — always chasing the moment where technology stops feeling like software and starts feeling like magic.</p>
+            <p>My leadership philosophy is simple: hire brilliant people, give them a clear mission, remove the friction, and build a culture where experimentation is celebrated. I believe the next decade belongs to spatial computing, AI-native tools, and experiences that blur the line between the digital and physical.</p>
+          </div>
+          <div class="stats reveal d1" id="stats">
+            <div class="glass stat"><div class="num" data-count="12" data-suffix="+">0</div><div class="label">Years of Experience</div></div>
+            <div class="glass stat"><div class="num" data-count="60" data-suffix="+">0</div><div class="label">Team Members Led</div></div>
+            <div class="glass stat"><div class="num" data-count="85" data-suffix="+">0</div><div class="label">Projects Delivered</div></div>
+            <div class="glass stat"><div class="num" data-count="9" data-suffix="">0</div><div class="label">Industries Served</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXCITES ================= -->
+    <section id="excites">
+      <div class="wrap">
+        <div class="reveal" style="text-align:center; margin-bottom:50px;">
+          <div class="eyebrow">What Excites Me</div>
+          <h2 class="section-title">Passions that <span class="grad-text">drive the work</span></h2>
+          <p class="section-sub" style="margin-inline:auto;">The intersections where I love to spend my energy — and where the most exciting problems live.</p>
+        </div>
+        <div class="card-grid" id="excitesGrid"></div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERTISE ================= -->
+    <section id="expertise">
+      <div class="wrap">
+        <div class="reveal" style="text-align:center; margin-bottom:50px;">
+          <div class="eyebrow">Professional Expertise</div>
+          <h2 class="section-title">A living <span class="grad-text">skills ecosystem</span></h2>
+          <p class="section-sub" style="margin-inline:auto;">Not a checklist — a connected web of engineering, design, and leadership capabilities.</p>
+        </div>
+        <div class="skill-grid" id="skillGrid"></div>
+        <div class="tech-cloud" id="techCloud"></div>
+      </div>
+    </section>
+
+    <!-- ================= VENTURES ================= -->
+    <section id="ventures">
+      <div class="wrap">
+        <div class="reveal" style="margin-bottom:44px;">
+          <div class="eyebrow">Companies & Ventures</div>
+          <h2 class="section-title">Where I <span class="grad-text">build & lead</span></h2>
+          <p class="section-sub">Current and past ventures shaping the future of immersive technology.</p>
+        </div>
+        <div class="ventures-list" id="venturesList"></div>
+      </div>
+    </section>
+
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects">
+      <div class="wrap">
+        <div class="reveal" style="margin-bottom:44px;">
+          <div class="eyebrow">Featured Projects</div>
+          <h2 class="section-title">Selected <span class="grad-text">work</span></h2>
+          <p class="section-sub">A snapshot of products and experiences I'm proud to have shipped. Drag or scroll horizontally →</p>
+        </div>
+      </div>
+      <div class="wrap"><div class="proj-scroll" id="projScroll"></div></div>
+    </section>
+
+    <!-- ================= PHILOSOPHY ================= -->
+    <section id="philosophy">
+      <div class="wrap philo">
+        <div class="reveal">
+          <div class="eyebrow" style="margin-inline:auto;">Personal Philosophy</div>
+          <div class="quote reveal d1">"The best technology doesn't just work — it <span class="grad-text">disappears</span>, leaving behind only the feeling of wonder."</div>
+        </div>
+        <div class="values">
+          <div class="glass value reveal d1"><div class="vic">🧭</div><h4>Vision First</h4><p>Every line of code should serve a story worth telling.</p></div>
+          <div class="glass value reveal d2"><div class="vic">🤝</div><h4>People Over Process</h4><p>Great teams build great products — culture is the real architecture.</p></div>
+          <div class="glass value reveal d3"><div class="vic">🚀</div><h4>Bias to Ship</h4><p>Momentum compounds. Learn in public, iterate relentlessly.</p></div>
+          <div class="glass value reveal d4"><div class="vic">♾️</div><h4>Curiosity Always</h4><p>The edge of what's possible is my favorite place to work.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact">
+      <div class="wrap">
+        <div class="glass contact-card reveal">
+          <div>
+            <div class="eyebrow">Let's Connect</div>
+            <h2 class="section-title">Let's build something <span class="grad-text">extraordinary</span> together.</h2>
+            <p class="section-sub">Whether it's an ambitious product, an XR experience, or an advisory conversation — I'd love to hear from you.</p>
+            <div class="contact-links" id="contactLinks"></div>
+            <div class="contact-actions">
+              <button class="btn btn-primary" onclick="downloadVCard()">⬇ Download vCard</button>
+              <a class="btn btn-wa" id="whatsappBtn2" target="_blank" rel="noopener">💬 Message on WhatsApp</a>
+            </div>
+          </div>
+          <div class="qr-box">
+            <div class="qr-frame"><img id="qrImg" alt="QR code to this website" loading="lazy" /></div>
+            <p>Scan to open this card<br/>on any device</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <div class="wrap">
+      <div class="fbrand grad-text">Ahmad Iftikhar</div>
+      <p>Technology Leader • CTO • XR Innovator • Game Developer</p>
+      <div class="footer-socials" id="footerSocials"></div>
+      <p>© <span id="year"></span> Ahmad Iftikhar. Crafted with precision & passion.</p>
+    </div>
+  </footer>
+
+  <!-- ================= FLOATING ACTIONS ================= -->
+  <div class="fab-stack">
+    <button class="fab fab-top" id="fabTop" aria-label="Back to top" title="Back to top">↑</button>
+    <a class="fab fab-wa" id="fabWa" target="_blank" rel="noopener" aria-label="WhatsApp" title="WhatsApp">💬</a>
+  </div>
+
+  <script>
+  /* ============================================================
+     ⚙️  CONFIG — EDIT YOUR DETAILS HERE
+  ============================================================ */
+  const CONFIG = {
+    name: "Ahmad Iftikhar",
+    firstName: "Ahmad",
+    lastName: "Iftikhar",
+    title: "Chief Technology Officer",
+    org: "Elytra Studios",
+    tagline: "Technology Leader • CTO • XR Innovator • Game Developer",
+
+    // The public URL of THIS site (used for the QR code + vCard).
+    website: "https://ahmadiftikhar.github.io",
+
+    // Contact details — replace with your own
+    email: "ahmadiftikhar@elytrastudios.com",
+    phoneDisplay: "+92 321 8894274",       // shown to humans
+    phoneIntl: "923218894274",             // digits only, country code, no +  (for WhatsApp & vCard)
+    linkedin: "https://www.linkedin.com/in/ahmadiftikhar17",
+    github: "https://github.com/AhmadIftikhar",
+
+    // Roles cycled in the hero typing effect
+    roles: [
+      "Technology Leader",
+      "Chief Technology Officer",
+      "XR Innovator",
+      "Game Developer",
+      "AR / VR Architect",
+      "Product Builder"
+    ],
+
+    excites: [
+      { icon: "🎮", title: "Game Development", desc: "Crafting worlds and mechanics that keep players coming back for more." },
+      { icon: "🧠", title: "Artificial Intelligence", desc: "AI-native tooling and intelligent systems that amplify human creativity." },
+      { icon: "🥽", title: "Extended Reality (XR)", desc: "Spatial computing that dissolves the boundary between digital and physical." },
+      { icon: "🌐", title: "AR / VR Experiences", desc: "Immersive, presence-first experiences across headsets and mobile." },
+      { icon: "📖", title: "Interactive Storytelling", desc: "Narrative-driven design where the audience shapes the outcome." },
+      { icon: "💡", title: "Product Innovation", desc: "Turning ambiguous ideas into products people genuinely love." },
+      { icon: "🚀", title: "Entrepreneurship", desc: "Building ventures from zero to one — and the messy road to scale." },
+      { icon: "🤝", title: "Team Building", desc: "Assembling and empowering multidisciplinary, high-trust teams." },
+      { icon: "🔮", title: "Emerging Technologies", desc: "Living on the frontier of what technology will make possible next." }
+    ],
+
+    skills: [
+      { name: "Unity Development", cat: "Engine", level: 95 },
+      { name: "Unreal Engine", cat: "Engine", level: 88 },
+      { name: "AR Development", cat: "XR", level: 92 },
+      { name: "VR Development", cat: "XR", level: 90 },
+      { name: "WebXR", cat: "XR", level: 82 },
+      { name: "Mobile Development", cat: "Platform", level: 85 },
+      { name: "Product Strategy", cat: "Leadership", level: 93 },
+      { name: "Technical Leadership", cat: "Leadership", level: 96 },
+      { name: "Team Management", cat: "Leadership", level: 94 },
+      { name: "Solution Architecture", cat: "Engineering", level: 90 },
+      { name: "UI/UX Oversight", cat: "Design", level: 84 },
+      { name: "AI Integration", cat: "Engineering", level: 80 }
+    ],
+
+    techTags: ["C#", "C++", "Unity", "Unreal", "ARKit", "ARCore", "OpenXR", "Meta Quest", "HoloLens", "WebGL", "Three.js", "Blender", "Node.js", "TypeScript", "Python", "Shader Graph", "Firebase", "AWS"],
+
+    ventures: [
+      {
+        logo: "◈", name: "Elytra Studios", role: "Founder & CTO",
+        desc: "An immersive technology studio building XR products, games, and interactive experiences for global clients. We partner with brands and founders to turn ambitious concepts into shippable, delightful realities.",
+        tags: ["XR Products", "Game Development", "AR/VR", "Technical Consulting", "Interactive Media"]
+      }
+      // ➕ Add more ventures here as objects with the same shape.
+    ],
+
+    projects: [
+      { emoji: "🏙️", grad: "linear-gradient(135deg,#7c5cff,#22d3ee)", title: "Immersive City AR", desc: "A city-scale augmented reality wayfinding & storytelling platform blending live data with spatial overlays.", tags: ["Unity", "ARCore", "ARKit"], outcome: "500K+ interactions", link: "#" },
+      { emoji: "🕹️", grad: "linear-gradient(135deg,#34e0a1,#22d3ee)", title: "VR Training Sim", desc: "Enterprise VR simulation for high-risk industrial training, cutting onboarding time dramatically.", tags: ["Unreal", "Meta Quest", "OpenXR"], outcome: "40% faster onboarding", link: "#" },
+      { emoji: "👾", grad: "linear-gradient(135deg,#ff5c8a,#7c5cff)", title: "Mobile Game Franchise", desc: "A stylized mobile game series with millions of downloads and a thriving live-ops community.", tags: ["Unity", "C#", "Live Ops"], outcome: "2M+ downloads", link: "#" },
+      { emoji: "🧬", grad: "linear-gradient(135deg,#22d3ee,#34e0a1)", title: "WebXR Product Showcase", desc: "A browser-based 3D configurator letting customers explore products in AR without an app.", tags: ["WebXR", "Three.js", "TypeScript"], outcome: "3x engagement", link: "#" }
+    ]
+  };
+
+  /* ============================================================
+     RENDER DYNAMIC CONTENT
+  ============================================================ */
+  // Hero + contact links
+  document.getElementById("linkedinBtn").href = CONFIG.linkedin;
+  document.getElementById("emailBtn").href = "mailto:" + CONFIG.email;
+  const waLink = "https://wa.me/" + CONFIG.phoneIntl + "?text=" + encodeURIComponent("Hi Ahmad, I found your digital card and would love to connect!");
+  document.getElementById("whatsappBtn").href = waLink;
+  document.getElementById("whatsappBtn2").href = waLink;
+  document.getElementById("fabWa").href = waLink;
+  document.getElementById("year").textContent = "2026";
+
+  // Excites cards
+  document.getElementById("excitesGrid").innerHTML = CONFIG.excites.map((e, i) => `
+    <div class="glass xcard reveal d${(i%4)+1}">
+      <div class="ic">${e.icon}</div>
+      <h3>${e.title}</h3>
+      <p>${e.desc}</p>
+    </div>`).join("");
+
+  // Skills with rings
+  document.getElementById("skillGrid").innerHTML = CONFIG.skills.map((s, i) => {
+    const r = 28, c = 2 * Math.PI * r;
+    return `
+    <div class="glass skill reveal d${(i%4)+1}">
+      <div class="ring">
+        <svg width="64" height="64">
+          <circle cx="32" cy="32" r="${r}" stroke="rgba(255,255,255,0.08)" stroke-width="6" fill="none"/>
+          <circle class="ring-fill" cx="32" cy="32" r="${r}" stroke="url(#grad-${i})" stroke-width="6" fill="none"
+            stroke-linecap="round" stroke-dasharray="${c}" stroke-dashoffset="${c}" data-offset="${c*(1-s.level/100)}"/>
+          <defs><linearGradient id="grad-${i}" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0%" stop-color="#7c5cff"/><stop offset="100%" stop-color="#22d3ee"/>
+          </linearGradient></defs>
+        </svg>
+        <div class="pct">${s.level}%</div>
+      </div>
+      <div><div class="s-name">${s.name}</div><div class="s-cat">${s.cat}</div></div>
+    </div>`;
+  }).join("");
+
+  // Tech cloud
+  document.getElementById("techCloud").innerHTML = CONFIG.techTags.map(t => `<span class="tech-tag reveal">${t}</span>`).join("");
+
+  // Ventures
+  document.getElementById("venturesList").innerHTML = CONFIG.ventures.map((v, i) => `
+    <div class="glass venture reveal d${(i%2)+1}">
+      <div class="venture-logo">${v.logo}</div>
+      <div>
+        <h3>${v.name}</h3>
+        <div class="role">${v.role}</div>
+        <p>${v.desc}</p>
+        <div class="tags">${v.tags.map(t => `<span>${t}</span>`).join("")}</div>
+      </div>
+    </div>`).join("");
+
+  // Projects
+  document.getElementById("projScroll").innerHTML = CONFIG.projects.map(p => `
+    <div class="glass project reveal">
+      <div class="cover">
+        <div class="cover-grad" style="background:${p.grad}"></div>
+        <span class="cov-emoji">${p.emoji}</span>
+      </div>
+      <div class="body">
+        <h3>${p.title}</h3>
+        <p>${p.desc}</p>
+        <div class="ptags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
+        <div class="outcome">✦ ${p.outcome}</div>
+        <a class="plink" href="${p.link}" target="_blank" rel="noopener">View project →</a>
+      </div>
+    </div>`).join("");
+
+  // Contact links
+  const contactData = [
+    { ic: "✉", t: "Email", v: CONFIG.email, href: "mailto:" + CONFIG.email },
+    { ic: "in", t: "LinkedIn", v: CONFIG.linkedin.replace(/^https?:\/\/(www\.)?/, ""), href: CONFIG.linkedin },
+    { ic: "⌥", t: "GitHub", v: CONFIG.github.replace(/^https?:\/\/(www\.)?/, ""), href: CONFIG.github },
+    { ic: "🌐", t: "Website", v: CONFIG.website.replace(/^https?:\/\//, ""), href: CONFIG.website },
+    { ic: "💬", t: "WhatsApp", v: CONFIG.phoneDisplay, href: waLink }
+  ];
+  document.getElementById("contactLinks").innerHTML = contactData.map(c => `
+    <a class="clink" href="${c.href}" target="_blank" rel="noopener">
+      <div class="cl-ic">${c.ic}</div>
+      <div><div class="cl-t">${c.t}</div><div class="cl-v">${c.v}</div></div>
+    </a>`).join("");
+
+  // Footer socials
+  document.getElementById("footerSocials").innerHTML = [
+    { ic: "in", href: CONFIG.linkedin }, { ic: "⌥", href: CONFIG.github },
+    { ic: "✉", href: "mailto:" + CONFIG.email }, { ic: "💬", href: waLink }
+  ].map(s => `<a class="icon-btn" href="${s.href}" target="_blank" rel="noopener">${s.ic}</a>`).join("");
+
+  // QR code (points to your website)
+  document.getElementById("qrImg").src =
+    "https://api.qrserver.com/v1/create-qr-code/?size=220x220&margin=0&data=" + encodeURIComponent(CONFIG.website);
+
+  /* ============================================================
+     vCARD DOWNLOAD
+  ============================================================ */
+  function downloadVCard() {
+    const v = [
+      "BEGIN:VCARD", "VERSION:3.0",
+      `N:${CONFIG.lastName};${CONFIG.firstName};;;`,
+      `FN:${CONFIG.name}`,
+      `ORG:${CONFIG.org}`,
+      `TITLE:${CONFIG.title}`,
+      `EMAIL;type=INTERNET;type=WORK:${CONFIG.email}`,
+      `TEL;type=CELL:+${CONFIG.phoneIntl}`,
+      `URL:${CONFIG.website}`,
+      `URL;type=LinkedIn:${CONFIG.linkedin}`,
+      `NOTE:${CONFIG.tagline}`,
+      "END:VCARD"
+    ].join("\r\n");
+    const blob = new Blob([v], { type: "text/vcard;charset=utf-8" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = CONFIG.name.replace(/\s+/g, "_") + ".vcf";
+    document.body.appendChild(a); a.click(); a.remove();
+  }
+
+  /* ============================================================
+     TYPING EFFECT
+  ============================================================ */
+  (function typing() {
+    const el = document.getElementById("typed");
+    const words = CONFIG.roles;
+    let wi = 0, ci = 0, deleting = false;
+    function tick() {
+      const w = words[wi];
+      el.textContent = w.slice(0, ci);
+      if (!deleting && ci < w.length) { ci++; setTimeout(tick, 80); }
+      else if (!deleting && ci === w.length) { deleting = true; setTimeout(tick, 1600); }
+      else if (deleting && ci > 0) { ci--; setTimeout(tick, 40); }
+      else { deleting = false; wi = (wi + 1) % words.length; setTimeout(tick, 300); }
+    }
+    tick();
+  })();
+
+  /* ============================================================
+     SCROLL REVEAL + counters + skill rings
+  ============================================================ */
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  // Counters
+  const statsIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll("[data-count]").forEach(n => {
+        const target = +n.dataset.count, suffix = n.dataset.suffix || "";
+        let cur = 0; const step = Math.max(1, target / 60);
+        const run = () => { cur += step; if (cur >= target) { n.textContent = target + suffix; } else { n.textContent = Math.floor(cur) + suffix; requestAnimationFrame(run); } };
+        run();
+      });
+      statsIO.unobserve(e.target);
+    });
+  }, { threshold: 0.4 });
+  const statsEl = document.getElementById("stats"); if (statsEl) statsIO.observe(statsEl);
+
+  // Skill rings animate on view
+  const ringIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      e.target.querySelectorAll(".ring-fill").forEach(c => {
+        c.style.transition = "stroke-dashoffset 1.4s cubic-bezier(0.22,1,0.36,1)";
+        requestAnimationFrame(() => { c.style.strokeDashoffset = c.dataset.offset; });
+      });
+      ringIO.unobserve(e.target);
+    });
+  }, { threshold: 0.3 });
+  const skillGridEl = document.getElementById("skillGrid"); if (skillGridEl) ringIO.observe(skillGridEl);
+
+  /* ============================================================
+     NAV behavior (hide on scroll down, theme, mobile, fab)
+  ============================================================ */
+  const nav = document.getElementById("nav");
+  const fabTop = document.getElementById("fabTop");
+  let lastY = 0;
+  window.addEventListener("scroll", () => {
+    const y = window.scrollY;
+    if (y > lastY && y > 300) nav.classList.add("hidden"); else nav.classList.remove("hidden");
+    lastY = y;
+    fabTop.classList.toggle("show", y > 600);
+  }, { passive: true });
+  fabTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+
+  // Theme toggle
+  const themeBtn = document.getElementById("themeBtn");
+  function setTheme(t) {
+    document.documentElement.setAttribute("data-theme", t);
+    themeBtn.textContent = t === "dark" ? "🌙" : "☀️";
+    try { localStorage.setItem("theme", t); } catch (e) {}
+  }
+  try { const saved = localStorage.getItem("theme"); if (saved) setTheme(saved); } catch (e) {}
+  themeBtn.addEventListener("click", () => {
+    setTheme(document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark");
+  });
+
+  // Mobile menu
+  const burger = document.getElementById("burger");
+  const mobileMenu = document.getElementById("mobileMenu");
+  burger.addEventListener("click", () => mobileMenu.classList.toggle("open"));
+  mobileMenu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => mobileMenu.classList.remove("open")));
+
+  // Preloader
+  window.addEventListener("load", () => {
+    setTimeout(() => document.getElementById("preloader").classList.add("done"), 600);
+  });
+
+  /* ============================================================
+     PARTICLE CONSTELLATION BACKGROUND
+  ============================================================ */
+  (function particles() {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let w, h, pts = [], mouse = { x: -999, y: -999 };
+    function resize() {
+      w = canvas.width = window.innerWidth; h = canvas.height = window.innerHeight;
+      const count = Math.min(90, Math.floor(w * h / 16000));
+      pts = Array.from({ length: count }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - 0.5) * 0.35, vy: (Math.random() - 0.5) * 0.35, r: Math.random() * 1.6 + 0.6
+      }));
+    }
+    window.addEventListener("resize", resize); resize();
+    window.addEventListener("mousemove", e => { mouse.x = e.clientX; mouse.y = e.clientY; });
+    window.addEventListener("mouseout", () => { mouse.x = -999; mouse.y = -999; });
+    function draw() {
+      ctx.clearRect(0, 0, w, h);
+      const light = document.documentElement.getAttribute("data-theme") === "light";
+      const dot = light ? "rgba(90,80,180," : "rgba(160,180,255,";
+      const line = light ? "rgba(120,110,200," : "rgba(124,140,255,";
+      for (const p of pts) {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > w) p.vx *= -1;
+        if (p.y < 0 || p.y > h) p.vy *= -1;
+        const dx = p.x - mouse.x, dy = p.y - mouse.y, md = Math.hypot(dx, dy);
+        if (md < 140) { p.x += dx / md * 0.6; p.y += dy / md * 0.6; }
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = dot + "0.7)"; ctx.fill();
+      }
+      for (let i = 0; i < pts.length; i++) {
+        for (let j = i + 1; j < pts.length; j++) {
+          const dx = pts[i].x - pts[j].x, dy = pts[i].y - pts[j].y, d = Math.hypot(dx, dy);
+          if (d < 130) { ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y);
+            ctx.strokeStyle = line + (0.14 * (1 - d / 130)) + ")"; ctx.lineWidth = 1; ctx.stroke(); }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  })();
+  </script>
+</body>
+</html>
