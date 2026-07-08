@@ -381,19 +381,36 @@
   .ventures-list { display: grid; gap: 18px; }
 
   /* ============================================================
-     PROJECTS — horizontal scroll
+     SELECTED WORK — filterable grid
   ============================================================ */
-  .proj-scroll { display: flex; gap: 20px; overflow-x: auto; padding: 6px 4px 26px; scroll-snap-type: x mandatory; scrollbar-width: thin; }
-  .proj-scroll::-webkit-scrollbar { height: 8px; }
-  .project {
-    flex: 0 0 min(360px, 82vw); scroll-snap-align: start; padding: 0; overflow: hidden;
-    display: flex; flex-direction: column; transition: transform 0.4s var(--ease), border-color 0.4s;
+  .work-filters { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 34px; }
+  .work-chip {
+    display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+    padding: 9px 18px; border-radius: 100px; font-size: 0.86rem; font-weight: 600; font-family: "Inter";
+    background: var(--surface); border: 1px solid var(--border); color: var(--text-soft);
+    transition: color 0.25s, border-color 0.25s, background 0.25s, transform 0.25s var(--ease);
   }
-  .project:hover { transform: translateY(-6px); border-color: var(--border-strong); }
-  .project .cover { aspect-ratio: 16/9; position: relative; overflow: hidden; background: #05060a; cursor: pointer; }
-  .project .cover .yt-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease), filter 0.4s; }
-  .project:hover .cover .yt-thumb { transform: scale(1.07); filter: brightness(0.72); }
-  .project .cover iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .work-chip:hover { color: var(--text); transform: translateY(-2px); border-color: var(--border-strong); }
+  .work-chip.active { color: #05060a; background: var(--grad); border-color: transparent; box-shadow: var(--glow); }
+  .chip-count { font-size: 0.72rem; padding: 2px 8px; border-radius: 100px; background: rgba(0,0,0,0.18); color: inherit; opacity: 0.85; }
+  .work-chip:not(.active) .chip-count { background: var(--surface-2); }
+
+  .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
+  .wcard { padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.4s var(--ease), border-color 0.4s; }
+  .wcard:hover { transform: translateY(-6px); border-color: var(--border-strong); }
+  .wcard .cover { aspect-ratio: 16/9; position: relative; overflow: hidden; background: #05060a; cursor: pointer; }
+  .wcard .yt-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease), filter 0.4s; }
+  .wcard:hover .yt-thumb { transform: scale(1.07); filter: brightness(0.72); }
+  .wcard .cover iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .wcover { display: grid; place-items: center; background: linear-gradient(135deg, #7c5cff, #22d3ee); }
+  .wemoji { font-size: 2.8rem; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.4)); transition: transform 0.5s var(--ease); }
+  .wcard:hover .wemoji { transform: scale(1.15) rotate(-5deg); }
+  .wbody { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
+  .wbody h3 { font-size: 1rem; font-weight: 600; line-height: 1.35; }
+  .wlinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
+  .wlinks a { font-size: 0.82rem; font-weight: 600; color: var(--cyan); transition: gap 0.3s, color 0.3s; }
+  .wlinks a:hover { color: var(--text); }
+
   .yt-play {
     position: absolute; inset: 0; margin: auto; width: 62px; height: 62px; border-radius: 50%;
     display: grid; place-items: center; font-size: 1.15rem; color: #fff; padding-left: 4px;
@@ -402,21 +419,12 @@
   }
   .yt-facade:hover .yt-play { transform: scale(1.14); background: var(--violet); }
   .yt-badge {
-    position: absolute; top: 12px; right: 12px; z-index: 3; font-size: 0.72rem; font-weight: 600;
-    padding: 5px 12px; border-radius: 100px; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px);
+    position: absolute; top: 12px; right: 12px; z-index: 3; font-size: 0.7rem; font-weight: 600;
+    padding: 5px 11px; border-radius: 100px; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.16); color: #fff; letter-spacing: 0.02em;
   }
   .yt-facade.playing .yt-play, .yt-facade.playing .yt-badge { display: none; }
   .yt-facade.playing { cursor: default; }
-  .plink-btn { background: none; border: none; padding: 0; font: inherit; }
-  .project .body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
-  .project h3 { font-size: 1.2rem; margin-bottom: 8px; }
-  .project p { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
-  .project .ptags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
-  .project .ptags span { font-size: 0.72rem; padding: 4px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-soft); }
-  .project .outcome { font-size: 0.82rem; color: var(--emerald); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
-  .project .plink { font-size: 0.86rem; font-weight: 600; color: var(--cyan); display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s; }
-  .project .plink:hover { gap: 12px; }
 
   /* ============================================================
      PHILOSOPHY
@@ -648,13 +656,14 @@
     <!-- ================= PROJECTS ================= -->
     <section id="projects">
       <div class="wrap">
-        <div class="reveal" style="margin-bottom:44px;">
-          <div class="eyebrow">Featured Projects</div>
+        <div class="reveal" style="margin-bottom:30px;">
+          <div class="eyebrow">Featured Work</div>
           <h2 class="section-title">Selected <span class="grad-text">work</span></h2>
-          <p class="section-sub">Real AR, VR &amp; WebAR products I've shipped. Tap any cover to play the demo — scroll horizontally for more →</p>
+          <p class="section-sub">A body of AR, VR, Unity, Unreal, and animation work. Filter by discipline, and tap any cover to play the demo.</p>
         </div>
+        <div class="work-filters reveal" id="workFilters"></div>
+        <div class="work-grid" id="workGrid"></div>
       </div>
-      <div class="wrap"><div class="proj-scroll" id="projScroll"></div></div>
     </section>
 
     <!-- ================= PHILOSOPHY ================= -->
@@ -798,16 +807,89 @@
       // ➕ Add more ventures here as objects with the same shape.
     ],
 
-    // Each project embeds a YouTube demo (loaded on click for performance).
-    projects: [
-      { videoId: "9WA90owKl40", title: "Naturversum AR", year: "2022–2023", tags: ["Unity", "AR", "Location-Based"], desc: "A location-based AR experience for a tree-sponsorship platform — view purchased and available trees in augmented reality at real-world sites." },
-      { videoId: "Ubu3GKxvdaM", title: "Trail Explorer — CTRMA", year: "2021–2023", tags: ["Unity", "AR", "Bilingual"], desc: "Explore Central Texas's 45-mile Southwest Trail through bilingual English/Spanish voice narration and interactive AR animations." },
-      { videoId: "ZTX4tAddWB8", title: "Kids Plenty 4D AR Book", year: "2020–2022", tags: ["Unity", "AR", "IBM Watson", "Vuforia"], desc: "An AR storybook app with IBM Watson voice recognition, image recognition, and flat-surface tracking for immersive kids' learning.", link: "https://kidsplenty.com" },
-      { videoId: "-vFNpK6F_Oo", title: "Byggfix AR Measurement", year: "2022–2023", tags: ["Unity", "AR", "Measurement"], desc: "Visualize different flooring materials in your own space with AR before you buy — preview the aesthetic with confidence.", link: "https://byggfix.fi/" },
-      { videoId: "PqHP_1-X9hk", title: "Kaminlicht AR", year: "2020–2021", tags: ["Unity", "AR", "eCommerce"], desc: "An AR product-visualization app for a German fireplace retailer — place and preview chimneys in your room before purchasing." },
-      { videoId: "4jQXh_yVhic", title: "Unbreakable AR Exhibit", year: "2019–2021", tags: ["Unity", "AR", "Cultural"], desc: "An immersive historical AR experience across 11 US cities, letting visitors explore powerful statues with rich visuals and spatial audio." },
-      { videoId: "m-JhhBmZRXc", title: "Kid Explorer Club WebAR", year: "2024", tags: ["Unity", "WebAR", "Floor Tracking"], desc: "A browser-based WebAR adventure with floor tracking and a guided interactive story — no app install required.", link: "https://www.elytrastudios.com/Unity/RocketARFinal/index.html" },
-      { videoId: "1SmPJQxiHOE", title: "Giovanni VR Fitness", year: "2024", tags: ["Unity", "VR", "Meta Quest 3"], desc: "An immersive VR fitness application built for Meta Quest 3, bringing guided workouts into virtual reality." }
+    // Filter categories for the Selected Work grid
+    workCategories: ["All", "AR", "VR", "Unity", "Unreal", "Animation & Design"],
+
+    // Each work item embeds a YouTube demo (loaded on click for performance).
+    // c = category, v = YouTube video id, t = title
+    work: [
+      // ---- AR ----
+      { c: "AR", v: "9WA90owKl40", t: "Naturversum — Location-Based AR" },
+      { c: "AR", v: "Ubu3GKxvdaM", t: "Trail Explorer — CTRMA AR Experience" },
+      { c: "AR", v: "PqHP_1-X9hk", t: "Kaminlicht AR App" },
+      { c: "AR", v: "ZTX4tAddWB8", t: "KidsPlenty 4D AR Book" },
+      { c: "AR", v: "-vFNpK6F_Oo", t: "Byggfix AR Measurement" },
+      { c: "AR", v: "K9UpfNB7TW0", t: "InterApp — Cloud AR" },
+      { c: "AR", v: "9mv7fngvlgs", t: "Tellpix AR Engine" },
+      { c: "AR", v: "4jQXh_yVhic", t: "Unbreakable — Cultural AR" },
+      { c: "AR", v: "m-JhhBmZRXc", t: "Kids Explorer Club — WebAR" },
+      { c: "AR", v: "Bhl5GvUTf_o", t: "Mystifi Disney Invite — WebAR" },
+      { c: "AR", v: "PqIgIK3hRpc", t: "Meta Alexandria — AR Painting App" },
+      { c: "AR", v: "j0u6UmHTx9k", t: "Harbinger — AR Glove Sizing" },
+      { c: "AR", v: "bw_N9uIb4Yo", t: "SrK — WebAR" },
+      { c: "AR", v: "5D3rgifPvvc", t: "Shoe Try-On AR" },
+      { c: "AR", v: "L34XYdYEang", t: "Star Wars Card — WebAR" },
+      // ---- VR ----
+      { c: "VR", v: "Twn3OgAFN2g", t: "BattleReady — VR Bullet-Wound First Aid" },
+      { c: "VR", v: "5DYi5DkFezc", t: "Fire & Evacuation VR Safety Training (UE5)" },
+      { c: "VR", v: "qBjS6al9Tbc", t: "VR Nursing Simulations — AI (UE5)" },
+      { c: "VR", v: "U5s1j347bpI", t: "Street Smart VR Training Module" },
+      { c: "VR", v: "HhzwV5C1Hu4", t: "Mixed Reality Robot Studio — Quest 3" },
+      { c: "VR", v: "hrFbcEOBOXI", t: "JPE Space — Home Automation VR" },
+      { c: "VR", v: "2nlZQjXHi8Y", t: "Nexans Electricity VR" },
+      { c: "VR", v: "0Xx0uo-v6kQ", t: "JCL Transformer VR Experience" },
+      { c: "VR", v: "ynXdbaW4Xto", t: "Strike to Win! — Chocolicious VR Game" },
+      { c: "VR", v: "wngysqkEoxE", t: "VR Basketball" },
+      { c: "VR", v: "52VNfaD9Syg", t: "VR Boat Experience" },
+      { c: "VR", v: "1SmPJQxiHOE", t: "Giovanni Fitness VR" },
+      { c: "VR", v: "b0Jz0YF__Kw", t: "Pierree VR" },
+      { c: "VR", v: "-jH6xn4Ya-Y", t: "NEAR — Streaming VR (U3D)" },
+      { c: "VR", v: "TQzcWHwcSV0", t: "VIVR 360 — VR App" },
+      // ---- Unreal ----
+      { c: "Unreal", v: "ss3GNZHgICo", t: "Dog AI — Unreal Engine" },
+      { c: "Unreal", v: "WE3O3cJoEL8", t: "FPS UI — Unreal Engine" },
+      { c: "Unreal", v: "HkZz84VmY4c", t: "Sword VFX Animation — Unreal" },
+      { c: "Unreal", v: "hYgkExlLzi8", t: "Downhill Racing Game — Unreal" },
+      { c: "Unreal", v: "NHTlnp2485M", t: "Puzzle Level — Unreal Engine" },
+      { c: "Unreal", v: "g_Dz-1dcXQg", t: "Crouch on Spline — Unreal" },
+      { c: "Unreal", v: "UXV5WJIFmiU", t: "FPS Destruction — Unreal Engine" },
+      // ---- Animation & Design ----
+      { c: "Animation & Design", v: "avoeAGFt6eE", t: "Forest — Unreal Engine Environment" },
+      { c: "Animation & Design", v: "8_V47CQBPWg", t: "The Last of Us — Unreal Environment" },
+      { c: "Animation & Design", v: "NpMeHqZuU3Y", t: "Victorian Era House" },
+      { c: "Animation & Design", v: "ka_TYOgzZD4", t: "Abandoned Tunnel Scene" },
+      { c: "Animation & Design", v: "1cJdl0uY7v0", t: "Garden — Unreal Engine" },
+      { c: "Animation & Design", v: "8o7ty36Majg", t: "Day & Night — Unreal Engine" },
+      { c: "Animation & Design", v: "s94nhnVoccw", t: "Farm & Bee — Unreal Engine" },
+      { c: "Animation & Design", v: "AywUOvjYpFA", t: "Attack on Castle — Unreal Engine" },
+      { c: "Animation & Design", v: "Ow3_80Lokok", t: "Tunnel Scene — Unreal Engine" },
+      { c: "Animation & Design", v: "NlvoLYALogk", t: "Jungle Environment — Unreal Engine" },
+      { c: "Animation & Design", v: "FAi2qn5OEHI", t: "Quick Scene — Unreal Engine 4" },
+      { c: "Animation & Design", v: "841NnPdkE7U", t: "Trailer Scene Environment" },
+      { c: "Animation & Design", v: "E6X9SGwhT28", t: "Underwater Environment — Maya to Unreal" },
+      { c: "Animation & Design", v: "1H2RAYfcsk0", t: "Underwater Stingray" },
+      { c: "Animation & Design", v: "qkhFOWXVS1U", t: "Kelo Robotics — Render" },
+      { c: "Animation & Design", v: "K7Xxt0WHKGk", t: "Zong Billboard Ad" },
+      { c: "Animation & Design", v: "Cy7dJ-8HMuI", t: "Lubuds Boat Animation" },
+      { c: "Animation & Design", v: "6Zt6nmbqtVM", t: "Knotnet Metaverse Ad" },
+      { c: "Animation & Design", v: "PgCWUqQ9hGc", t: "Pathway of Happiness — Ep. 1" },
+      { c: "Animation & Design", v: "l1HuRYe6SWM", t: "Pathway of Happiness — Ep. 2" },
+      { c: "Animation & Design", v: "NkeCrPsPjJY", t: "Pathway of Happiness — Ep. 3" },
+      { c: "Animation & Design", v: "2YxwQ6a6mcU", t: "Pathway of Happiness — Ep. 4" },
+      { c: "Animation & Design", v: "ry4Mro6LAq4", t: "Pathway of Happiness — Ep. 5" },
+      { c: "Animation & Design", v: "U-hZ76TPxe0", t: "Pathway of Happiness — Ep. 6" }
+    ],
+
+    // Unity-built games & apps (store links; no trailer in the portfolio sheet).
+    unityApps: [
+      { t: "Death Island", emoji: "🏝️", android: "https://play.google.com/store/apps/details?id=com.Elytra.DeathIsland" },
+      { t: "Guns of Death", emoji: "🔫", android: "https://play.google.com/store/apps/details?id=com.yekgames.gunsofdeath&hl=en_US" },
+      { t: "Knights Life", emoji: "🛡️", android: "https://play.google.com/store/apps/details?id=com.knights.life&hl=en" },
+      { t: "War2Escape", emoji: "💥", android: "https://play.google.com/store/apps/details?id=com.Comp2E.War2Escape", ios: "https://apps.apple.com/us/app/war2escape/id6541765555" },
+      { t: "Badminton League", emoji: "🏸", ios: "https://apps.apple.com/pk/app/badminton-league/id1230352595" },
+      { t: "Sim Hotel Tycoon", emoji: "🏨", ios: "https://apps.apple.com/pk/app/sim-hotel-tycoon/id6444147396" },
+      { t: "Island Farm Adventure", emoji: "🌾", ios: "https://apps.apple.com/pk/app/island-farm-adventure/id6455889828" },
+      { t: "Merge Legends", emoji: "⚔️", ios: "https://apps.apple.com/pk/app/merge-legends/id6445914808" }
     ]
   };
 
@@ -866,23 +948,56 @@
       </div>
     </div>`).join("");
 
-  // Projects — YouTube facade (lightweight thumbnail; iframe loads on click)
-  document.getElementById("projScroll").innerHTML = CONFIG.projects.map(p => `
-    <div class="glass project reveal">
-      <div class="cover yt-facade" data-id="${p.videoId}" role="button" tabindex="0" aria-label="Play ${p.title} demo video">
-        <img class="yt-thumb" src="https://i.ytimg.com/vi/${p.videoId}/hqdefault.jpg" alt="${p.title} preview" loading="lazy" />
+  // Selected Work — categorized, filterable grid of YouTube demos + Unity apps
+  const escAttr = s => String(s).replace(/"/g, "&quot;");
+  function catClass(c) { return "cat-" + c.replace(/[^a-z]/gi, "").toLowerCase(); }
+
+  const videoCards = CONFIG.work.map(w => `
+    <article class="glass wcard reveal" data-cat="${escAttr(w.c)}">
+      <div class="cover yt-facade" data-id="${w.v}" role="button" tabindex="0" aria-label="Play ${escAttr(w.t)}">
+        <img class="yt-thumb" src="https://i.ytimg.com/vi/${w.v}/hqdefault.jpg" alt="${escAttr(w.t)} preview" loading="lazy" />
         <span class="yt-play" aria-hidden="true">▶</span>
-        <span class="yt-badge">${p.year}</span>
+        <span class="yt-badge">${w.c}</span>
       </div>
-      <div class="body">
-        <h3>${p.title}</h3>
-        <p>${p.desc}</p>
-        <div class="ptags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
-        ${p.link
-          ? `<a class="plink" href="${p.link}" target="_blank" rel="noopener">Visit project →</a>`
-          : `<button class="plink plink-btn" type="button" data-play="${p.videoId}">Watch demo →</button>`}
+      <div class="wbody"><h3>${w.t}</h3></div>
+    </article>`).join("");
+
+  const unityCards = CONFIG.unityApps.map(a => `
+    <article class="glass wcard reveal" data-cat="Unity">
+      <div class="cover wcover">
+        <span class="wemoji">${a.emoji || "🎮"}</span>
+        <span class="yt-badge">Unity</span>
       </div>
-    </div>`).join("");
+      <div class="wbody">
+        <h3>${a.t}</h3>
+        <div class="wlinks">
+          ${a.android ? `<a href="${a.android}" target="_blank" rel="noopener">▶ Google Play</a>` : ""}
+          ${a.ios ? `<a href="${a.ios}" target="_blank" rel="noopener"> App Store</a>` : ""}
+        </div>
+      </div>
+    </article>`).join("");
+
+  document.getElementById("workGrid").innerHTML = videoCards + unityCards;
+
+  // Filter chips (with live counts)
+  const allCards = () => Array.from(document.querySelectorAll("#workGrid .wcard"));
+  const countFor = cat => cat === "All" ? allCards().length : allCards().filter(c => c.dataset.cat === cat).length;
+  document.getElementById("workFilters").innerHTML = CONFIG.workCategories.map((cat, i) => `
+    <button class="work-chip${i === 0 ? " active" : ""}" data-filter="${escAttr(cat)}">
+      ${cat} <span class="chip-count">${countFor(cat)}</span>
+    </button>`).join("");
+
+  document.querySelectorAll(".work-chip").forEach(chip => {
+    chip.addEventListener("click", () => {
+      document.querySelectorAll(".work-chip").forEach(c => c.classList.remove("active"));
+      chip.classList.add("active");
+      const f = chip.dataset.filter;
+      allCards().forEach(card => {
+        const show = f === "All" || card.dataset.cat === f;
+        card.style.display = show ? "" : "none";
+      });
+    });
+  });
 
   // Load YouTube iframe only when the user opts in (keeps the page fast)
   function playYT(facade) {
@@ -899,12 +1014,6 @@
   document.querySelectorAll(".yt-facade").forEach(f => {
     f.addEventListener("click", () => playYT(f));
     f.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); playYT(f); } });
-  });
-  document.querySelectorAll("[data-play]").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const facade = document.querySelector(`.yt-facade[data-id="${btn.dataset.play}"]`);
-      if (facade) { playYT(facade); facade.scrollIntoView({ behavior: "smooth", block: "center" }); }
-    });
   });
 
   // Contact links
