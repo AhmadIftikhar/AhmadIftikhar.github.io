@@ -402,9 +402,11 @@
   .wcard .yt-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease), filter 0.4s; }
   .wcard:hover .yt-thumb { transform: scale(1.07); filter: brightness(0.72); }
   .wcard .cover iframe { width: 100%; height: 100%; border: 0; display: block; }
-  .wcover { display: grid; place-items: center; background: linear-gradient(135deg, #7c5cff, #22d3ee); }
+  .wcover { display: grid; place-items: center; background: radial-gradient(circle at 50% 35%, rgba(124,92,255,0.35), #0a0b12 75%); }
   .wemoji { font-size: 2.8rem; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.4)); transition: transform 0.5s var(--ease); }
   .wcard:hover .wemoji { transform: scale(1.15) rotate(-5deg); }
+  .game-icon { width: 100px; height: 100px; border-radius: 24px; object-fit: cover; border: 1px solid rgba(255,255,255,0.14); box-shadow: 0 14px 34px rgba(0,0,0,0.55); transition: transform 0.5s var(--ease); }
+  .wcard:hover .game-icon { transform: scale(1.09) rotate(-3deg); }
   .wbody { padding: 18px 20px; display: flex; flex-direction: column; gap: 12px; flex: 1; }
   .wbody h3 { font-size: 1rem; font-weight: 600; line-height: 1.35; }
   .wlinks { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; }
@@ -885,16 +887,15 @@
       { c: "Animation & Design", v: "U-hZ76TPxe0", t: "Pathway of Happiness — Ep. 6" }
     ],
 
-    // Unity-built games & apps (store links; no trailer in the portfolio sheet).
+    // Unity-built games & apps (real store icons; links to Google Play / App Store).
     unityApps: [
-      { t: "Death Island", emoji: "🏝️", android: "https://play.google.com/store/apps/details?id=com.Elytra.DeathIsland" },
-      { t: "Guns of Death", emoji: "🔫", android: "https://play.google.com/store/apps/details?id=com.yekgames.gunsofdeath&hl=en_US" },
-      { t: "Knights Life", emoji: "🛡️", android: "https://play.google.com/store/apps/details?id=com.knights.life&hl=en" },
-      { t: "War2Escape", emoji: "💥", android: "https://play.google.com/store/apps/details?id=com.Comp2E.War2Escape", ios: "https://apps.apple.com/us/app/war2escape/id6541765555" },
-      { t: "Badminton League", emoji: "🏸", ios: "https://apps.apple.com/pk/app/badminton-league/id1230352595" },
-      { t: "Sim Hotel Tycoon", emoji: "🏨", ios: "https://apps.apple.com/pk/app/sim-hotel-tycoon/id6444147396" },
-      { t: "Island Farm Adventure", emoji: "🌾", ios: "https://apps.apple.com/pk/app/island-farm-adventure/id6455889828" },
-      { t: "Merge Legends", emoji: "⚔️", ios: "https://apps.apple.com/pk/app/merge-legends/id6445914808" }
+      { t: "War2Escape", icon: "game-war2escape.jpg", android: "https://play.google.com/store/apps/details?id=com.Comp2E.War2Escape", ios: "https://apps.apple.com/us/app/war2escape/id6541765555" },
+      { t: "Merge Legends", icon: "game-mergelegends.jpg", ios: "https://apps.apple.com/pk/app/merge-legends/id6445914808" },
+      { t: "Sim Hotel Tycoon", icon: "game-simhoteltycoon.jpg", ios: "https://apps.apple.com/pk/app/sim-hotel-tycoon/id6444147396" },
+      { t: "Island Farm Adventure", icon: "game-islandfarm.jpg", ios: "https://apps.apple.com/pk/app/island-farm-adventure/id6455889828" },
+      { t: "Badminton League", icon: "game-badmintonleague.jpg", ios: "https://apps.apple.com/pk/app/badminton-league/id1230352595" },
+      { t: "Pop Crush Match 3", icon: "game-gunsofdeath.jpg", android: "https://play.google.com/store/apps/details?id=com.yekgames.gunsofdeath&hl=en_US" },
+      { t: "Soul Catcher — Action RPG", icon: "game-knightslife.jpg", android: "https://play.google.com/store/apps/details?id=com.knights.life&hl=en" }
     ]
   };
 
@@ -970,7 +971,7 @@
   const unityCards = CONFIG.unityApps.map(a => `
     <article class="glass wcard reveal" data-cat="Unity">
       <div class="cover wcover">
-        <span class="wemoji">${a.emoji || "🎮"}</span>
+        ${a.icon ? `<img class="game-icon" src="${a.icon}" alt="${escAttr(a.t)} app icon" loading="lazy" />` : `<span class="wemoji">${a.emoji || "🎮"}</span>`}
         <span class="yt-badge">Unity</span>
       </div>
       <div class="wbody">
