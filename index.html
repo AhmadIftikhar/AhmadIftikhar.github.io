@@ -386,13 +386,28 @@
     display: flex; flex-direction: column; transition: transform 0.4s var(--ease), border-color 0.4s;
   }
   .project:hover { transform: translateY(-6px); border-color: var(--border-strong); }
-  .project .cover { aspect-ratio: 16/10; position: relative; overflow: hidden; display: grid; place-items: center; }
-  .project .cover .cover-grad { position: absolute; inset: 0; opacity: 0.9; }
-  .project .cover .cov-emoji { position: relative; z-index: 2; font-size: 3.4rem; filter: drop-shadow(0 6px 20px rgba(0,0,0,0.4)); transition: transform 0.5s var(--ease); }
-  .project:hover .cover .cov-emoji { transform: scale(1.15) rotate(-5deg); }
+  .project .cover { aspect-ratio: 16/9; position: relative; overflow: hidden; background: #05060a; cursor: pointer; }
+  .project .cover .yt-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease), filter 0.4s; }
+  .project:hover .cover .yt-thumb { transform: scale(1.07); filter: brightness(0.72); }
+  .project .cover iframe { width: 100%; height: 100%; border: 0; display: block; }
+  .yt-play {
+    position: absolute; inset: 0; margin: auto; width: 62px; height: 62px; border-radius: 50%;
+    display: grid; place-items: center; font-size: 1.15rem; color: #fff; padding-left: 4px;
+    background: rgba(124, 92, 255, 0.82); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.35);
+    box-shadow: var(--glow); transition: transform 0.3s var(--ease), background 0.3s; pointer-events: none;
+  }
+  .yt-facade:hover .yt-play { transform: scale(1.14); background: var(--violet); }
+  .yt-badge {
+    position: absolute; top: 12px; right: 12px; z-index: 3; font-size: 0.72rem; font-weight: 600;
+    padding: 5px 12px; border-radius: 100px; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.16); color: #fff; letter-spacing: 0.02em;
+  }
+  .yt-facade.playing .yt-play, .yt-facade.playing .yt-badge { display: none; }
+  .yt-facade.playing { cursor: default; }
+  .plink-btn { background: none; border: none; padding: 0; font: inherit; }
   .project .body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
   .project h3 { font-size: 1.2rem; margin-bottom: 8px; }
-  .project p { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 16px; flex: 1; }
+  .project p { color: var(--text-soft); font-size: 0.9rem; margin-bottom: 16px; flex: 1; display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
   .project .ptags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
   .project .ptags span { font-size: 0.72rem; padding: 4px 10px; border-radius: 8px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text-soft); }
   .project .outcome { font-size: 0.82rem; color: var(--emerald); font-weight: 600; margin-bottom: 14px; display: flex; align-items: center; gap: 6px; }
@@ -632,7 +647,7 @@
         <div class="reveal" style="margin-bottom:44px;">
           <div class="eyebrow">Featured Projects</div>
           <h2 class="section-title">Selected <span class="grad-text">work</span></h2>
-          <p class="section-sub">A snapshot of products and experiences I'm proud to have shipped. Drag or scroll horizontally →</p>
+          <p class="section-sub">Real AR, VR &amp; WebAR products I've shipped. Tap any cover to play the demo — scroll horizontally for more →</p>
         </div>
       </div>
       <div class="wrap"><div class="proj-scroll" id="projScroll"></div></div>
@@ -763,11 +778,16 @@
       // ➕ Add more ventures here as objects with the same shape.
     ],
 
+    // Each project embeds a YouTube demo (loaded on click for performance).
     projects: [
-      { emoji: "🏙️", grad: "linear-gradient(135deg,#7c5cff,#22d3ee)", title: "Immersive City AR", desc: "A city-scale augmented reality wayfinding & storytelling platform blending live data with spatial overlays.", tags: ["Unity", "ARCore", "ARKit"], outcome: "500K+ interactions", link: "#" },
-      { emoji: "🕹️", grad: "linear-gradient(135deg,#34e0a1,#22d3ee)", title: "VR Training Sim", desc: "Enterprise VR simulation for high-risk industrial training, cutting onboarding time dramatically.", tags: ["Unreal", "Meta Quest", "OpenXR"], outcome: "40% faster onboarding", link: "#" },
-      { emoji: "👾", grad: "linear-gradient(135deg,#ff5c8a,#7c5cff)", title: "Mobile Game Franchise", desc: "A stylized mobile game series with millions of downloads and a thriving live-ops community.", tags: ["Unity", "C#", "Live Ops"], outcome: "2M+ downloads", link: "#" },
-      { emoji: "🧬", grad: "linear-gradient(135deg,#22d3ee,#34e0a1)", title: "WebXR Product Showcase", desc: "A browser-based 3D configurator letting customers explore products in AR without an app.", tags: ["WebXR", "Three.js", "TypeScript"], outcome: "3x engagement", link: "#" }
+      { videoId: "9WA90owKl40", title: "Naturversum AR", year: "2022–2023", tags: ["Unity", "AR", "Location-Based"], desc: "A location-based AR experience for a tree-sponsorship platform — view purchased and available trees in augmented reality at real-world sites." },
+      { videoId: "Ubu3GKxvdaM", title: "Trail Explorer — CTRMA", year: "2021–2023", tags: ["Unity", "AR", "Bilingual"], desc: "Explore Central Texas's 45-mile Southwest Trail through bilingual English/Spanish voice narration and interactive AR animations." },
+      { videoId: "ZTX4tAddWB8", title: "Kids Plenty 4D AR Book", year: "2020–2022", tags: ["Unity", "AR", "IBM Watson", "Vuforia"], desc: "An AR storybook app with IBM Watson voice recognition, image recognition, and flat-surface tracking for immersive kids' learning.", link: "https://kidsplenty.com" },
+      { videoId: "-vFNpK6F_Oo", title: "Byggfix AR Measurement", year: "2022–2023", tags: ["Unity", "AR", "Measurement"], desc: "Visualize different flooring materials in your own space with AR before you buy — preview the aesthetic with confidence.", link: "https://byggfix.fi/" },
+      { videoId: "PqHP_1-X9hk", title: "Kaminlicht AR", year: "2020–2021", tags: ["Unity", "AR", "eCommerce"], desc: "An AR product-visualization app for a German fireplace retailer — place and preview chimneys in your room before purchasing." },
+      { videoId: "4jQXh_yVhic", title: "Unbreakable AR Exhibit", year: "2019–2021", tags: ["Unity", "AR", "Cultural"], desc: "An immersive historical AR experience across 11 US cities, letting visitors explore powerful statues with rich visuals and spatial audio." },
+      { videoId: "m-JhhBmZRXc", title: "Kid Explorer Club WebAR", year: "2024", tags: ["Unity", "WebAR", "Floor Tracking"], desc: "A browser-based WebAR adventure with floor tracking and a guided interactive story — no app install required.", link: "https://www.elytrastudios.com/Unity/RocketARFinal/index.html" },
+      { videoId: "1SmPJQxiHOE", title: "Giovanni VR Fitness", year: "2024", tags: ["Unity", "VR", "Meta Quest 3"], desc: "An immersive VR fitness application built for Meta Quest 3, bringing guided workouts into virtual reality." }
     ]
   };
 
@@ -826,21 +846,46 @@
       </div>
     </div>`).join("");
 
-  // Projects
+  // Projects — YouTube facade (lightweight thumbnail; iframe loads on click)
   document.getElementById("projScroll").innerHTML = CONFIG.projects.map(p => `
     <div class="glass project reveal">
-      <div class="cover">
-        <div class="cover-grad" style="background:${p.grad}"></div>
-        <span class="cov-emoji">${p.emoji}</span>
+      <div class="cover yt-facade" data-id="${p.videoId}" role="button" tabindex="0" aria-label="Play ${p.title} demo video">
+        <img class="yt-thumb" src="https://i.ytimg.com/vi/${p.videoId}/hqdefault.jpg" alt="${p.title} preview" loading="lazy" />
+        <span class="yt-play" aria-hidden="true">▶</span>
+        <span class="yt-badge">${p.year}</span>
       </div>
       <div class="body">
         <h3>${p.title}</h3>
         <p>${p.desc}</p>
         <div class="ptags">${p.tags.map(t => `<span>${t}</span>`).join("")}</div>
-        <div class="outcome">✦ ${p.outcome}</div>
-        <a class="plink" href="${p.link}" target="_blank" rel="noopener">View project →</a>
+        ${p.link
+          ? `<a class="plink" href="${p.link}" target="_blank" rel="noopener">Visit project →</a>`
+          : `<button class="plink plink-btn" type="button" data-play="${p.videoId}">Watch demo →</button>`}
       </div>
     </div>`).join("");
+
+  // Load YouTube iframe only when the user opts in (keeps the page fast)
+  function playYT(facade) {
+    const id = facade.dataset.id;
+    const iframe = document.createElement("iframe");
+    iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+    iframe.title = "YouTube video player";
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+    iframe.allowFullscreen = true;
+    facade.innerHTML = "";
+    facade.appendChild(iframe);
+    facade.classList.add("playing");
+  }
+  document.querySelectorAll(".yt-facade").forEach(f => {
+    f.addEventListener("click", () => playYT(f));
+    f.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); playYT(f); } });
+  });
+  document.querySelectorAll("[data-play]").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const facade = document.querySelector(`.yt-facade[data-id="${btn.dataset.play}"]`);
+      if (facade) { playYT(facade); facade.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    });
+  });
 
   // Contact links
   const contactData = [
