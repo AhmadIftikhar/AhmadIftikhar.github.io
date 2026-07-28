@@ -48,6 +48,11 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 
+  <!-- Warm up the connection to the YouTube thumbnail CDN + player before the Selected Work grid needs them -->
+  <link rel="preconnect" href="https://i.ytimg.com" crossorigin />
+  <link rel="dns-prefetch" href="https://i.ytimg.com" />
+  <link rel="dns-prefetch" href="https://www.youtube-nocookie.com" />
+
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90' font-family='Sora,sans-serif' font-weight='700'>%E2%97%88</text></svg>" />
 
   <style>
@@ -396,7 +401,7 @@
   .work-chip:not(.active) .chip-count { background: var(--surface-2); }
 
   .work-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 20px; }
-  .wcard { padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.4s var(--ease), border-color 0.4s; }
+  .wcard { padding: 0; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.4s var(--ease), border-color 0.4s; content-visibility: auto; contain-intrinsic-size: auto 320px; }
   .wcard:hover { transform: translateY(-6px); border-color: var(--border-strong); }
   .wcard .cover { aspect-ratio: 16/9; position: relative; overflow: hidden; background: #05060a; cursor: pointer; }
   .wcard .yt-thumb { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s var(--ease), filter 0.4s; }
@@ -432,13 +437,13 @@
   .yt-play {
     position: absolute; inset: 0; margin: auto; width: 62px; height: 62px; border-radius: 50%;
     display: grid; place-items: center; font-size: 1.15rem; color: #fff; padding-left: 4px;
-    background: rgba(124, 92, 255, 0.82); backdrop-filter: blur(6px); border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(124, 92, 255, 0.9); border: 1px solid rgba(255, 255, 255, 0.35);
     box-shadow: var(--glow); transition: transform 0.3s var(--ease), background 0.3s; pointer-events: none;
   }
   .yt-facade:hover .yt-play { transform: scale(1.14); background: var(--violet); }
   .yt-badge {
     position: absolute; top: 12px; right: 12px; z-index: 3; font-size: 0.7rem; font-weight: 600;
-    padding: 5px 11px; border-radius: 100px; background: rgba(0, 0, 0, 0.55); backdrop-filter: blur(8px);
+    padding: 5px 11px; border-radius: 100px; background: rgba(6, 7, 12, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.16); color: #fff; letter-spacing: 0.02em;
   }
   .yt-facade.playing .yt-play, .yt-facade.playing .yt-badge { display: none; }
@@ -850,29 +855,34 @@
     // `logoImg` points to a local logo file; falls back to `logo` text if no image.
     ventures: [
       {
-        logoImg: "elytra-logo.jpg", logo: "◈", name: "Elytra Studios", role: "Founder & CTO", period: "Full-time · 5+ yrs",
-        desc: "Elytra Studios is my interactive AR, VR, and gaming studio. We build real-world (VR, AR, and MR) and extended-reality experiences, and we work with clients to take an ambitious concept all the way to something polished that stands on its own.",
-        tags: ["XR Products", "Game Development", "AR / VR / MR", "Interactive Media", "Technical Consulting"]
+        logoImg: "elytra-logo.jpg", logo: "◈", name: "Elytra Studios", role: "Co-Founder & CTO", period: "Apr 2021 to Present · Full-time",
+        desc: "Elytra Studios is my interactive AR, VR, and gaming studio. I co-founded it in 2021 and stepped into the CTO seat in 2022. We build real-world (VR, AR, and MR) and extended-reality experiences, and we work with clients to take an ambitious concept all the way to something polished that stands on its own.",
+        tags: ["XR Products", "Game Development", "AR / VR / MR", "Interactive Media", "Startup Leadership"]
       },
       {
-        logoImg: "nexentra-logo.jpg", logo: "N", name: "Nexentra Solutions", role: "Co-Founder", period: "2025 to Present",
-        desc: "Nexentra Solutions is an AI-first technology company. We build AI-powered mobile apps, websites, and digital marketing, with intelligence baked into every layer of the product rather than bolted on at the end.",
+        logoImg: "nexentra-logo.jpg", logo: "N", name: "Nexentra Solutions", role: "Co-Founder", period: "Jun 2025 to Present · Full-time",
+        desc: "Nexentra Solutions is an AI-first technology company. We build AI-powered mobile apps, websites, and digital marketing, with intelligence baked into every layer of the product rather than bolted on at the end. The work spans healthcare, real estate, education, food and social apps, law, automotive, and fitness.",
         tags: ["AI-First", "Mobile Apps", "Web Development", "Digital Marketing", "Startup Leadership"]
       },
       {
-        logoImg: "cue-logo.jpg", logo: "C", name: "CUE", role: "Technical Consultant (Contract)", period: "2022 to Present · Remote",
-        desc: "A contract role where I lead the technical and project side of Unity-based interactive products, from first build all the way through delivery.",
+        logoImg: "cue-logo.jpg", logo: "C", name: "CUE", role: "Independent Contractor", period: "Jul 2022 to Present · Contract · Remote",
+        desc: "A long-running contract role where I handle the technical and project management side of Unity-based interactive products, from first build all the way through delivery.",
         tags: ["Unity", "Project Management", "Interactive", "Consulting"]
       },
       {
-        logoImg: "euphoria-logo.jpg", logo: "E", name: "Euphoria (EuphoriaXR LLC)", role: "Lead Game Developer", period: "2019 to 2020",
-        desc: "Led game development and worked hands-on with mixed reality experiences, sharpening skills across immersive gameplay and interactive XR at EuphoriaXR LLC.",
-        tags: ["Game Development", "Mixed Reality", "Unity", "XR"]
+        logoImg: "euphoria-logo.jpg", logo: "E", name: "Euphoria (EuphoriaXR LLC)", role: "Senior Game Developer", period: "Jul 2019 to Aug 2020",
+        desc: "Led game development at EuphoriaXR LLC and went deep on mixed reality. I built marker-based and markerless AR applications, VR experiences, location-based mixed reality, and AR games, which is where a lot of my instinct for immersive work came from.",
+        tags: ["Game Development", "Mixed Reality", "Augmented Reality", "Unity", "XR"]
       },
       {
-        logoImg: "narsun-logo.jpg", logo: "N", name: "Narsun Studios", role: "Team Lead Game Developer", period: "2016 to 2019",
-        desc: "Grew from Game Developer to Team Lead, shipping games and interactive projects while building and mentoring a high-performing development team.",
-        tags: ["Game Development", "Unity", "Team Leadership", "C#"]
+        logoImg: "narsun-logo.jpg", logo: "N", name: "Narsun Studios", role: "Team Lead Game Developer", period: "Jul 2016 to Jul 2019",
+        desc: "Grew from Game Developer to Team Lead over three years, shipping games in Unity and Unreal. I worked on game networking, web and API integration, and wrote a few of my own plugins, while leading the team on task distribution, timelines, QA, and on-time client delivery.",
+        tags: ["Game Development", "Unity", "Unreal", "Team Leadership", "C#"]
+      },
+      {
+        logo: "B", name: "Brainload Technologies", role: "Unity 3D Developer", period: "Apr 2016 to May 2016",
+        desc: "Where it started. I built 2D game clones and small titles in Unity, which is the stint that turned a curiosity about game engines into a career.",
+        tags: ["Unity", "2D Games", "Rapid Prototyping"]
       }
       // ➕ Add more ventures here as objects with the same shape.
     ],
@@ -1031,7 +1041,7 @@
   const videoCards = CONFIG.work.map(w => `
     <article class="glass wcard reveal" data-cat="${escAttr(w.c)}">
       <div class="cover yt-facade" data-id="${w.v}" role="button" tabindex="0" aria-label="Play ${escAttr(w.t)}">
-        <img class="yt-thumb" src="https://i.ytimg.com/vi/${w.v}/hqdefault.jpg" alt="${escAttr(w.t)} preview" loading="lazy" />
+        <img class="yt-thumb" src="https://i.ytimg.com/vi/${w.v}/mqdefault.jpg" alt="${escAttr(w.t)} preview" loading="lazy" decoding="async" width="320" height="180" />
         <span class="yt-play" aria-hidden="true">▶</span>
         <span class="yt-badge">${w.c}</span>
       </div>
